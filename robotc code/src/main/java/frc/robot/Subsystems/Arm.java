@@ -2,6 +2,7 @@ package frc.robot.Subsystems;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.ControlType;
+import com.revrobotics.CANSparkMax.IdleMode;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import frc.robot.Utils.Consts;
@@ -54,5 +55,13 @@ public class Arm {
 
     public double getSecondArmAngle(){
         return m_secondArmMotor.getEncoder().getPosition();
+    }
+
+    public void setFirstArmIdleMode(IdleMode firstArmMode){
+        m_firstArmMotor.setIdleMode(firstArmMode);
+    }
+
+    public void setFSecondArmIdleMode(IdleMode secondArmMode){
+        m_firstArmMotor.setIdleMode(secondArmMode);
     }
 }
