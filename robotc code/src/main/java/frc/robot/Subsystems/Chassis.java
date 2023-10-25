@@ -6,6 +6,8 @@ import com.revrobotics.CANSparkMax.IdleMode;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Utils.Consts;
+import frc.robot.Utils.MathUtils;
+
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import com.kauailabs.navx.frc.AHRS;
 
@@ -30,9 +32,11 @@ public class Chassis extends SubsystemBase{
         m_leftChassisMotorGroup = new MotorControllerGroup(m_rightBackChassisMotor, m_rightMidChassisMotor, m_rightForwardChassisMotor);
     }
 
-    public static void getChassis(){
-        if (m_chassis == null)
+    public static Chassis getInstance(){
+        if (m_chassis == null){
             m_chassis = new Chassis();
+        }
+        return m_chassis;
     }
 
     public static void drive(double rSpeed, double lSpeed){
@@ -49,11 +53,11 @@ public class Chassis extends SubsystemBase{
         m_leftBackChassisMotor.setIdleMode(idleMode);
 
     }
-    public static double getRightDistance(){
+    public static double getRightChassisMeters(){
         return (m_rightForwardChassisMotor.getEncoder().getPosition() * Consts.ChassisConsts.POSITION_TO_DISTANCE);
     }
 
-    public static double getLeftDistance(){
+    public static double getLeftChassisMeters(){
         return (m_leftForwardChassisMotor.getEncoder().getPosition() * Consts.ChassisConsts.POSITION_TO_DISTANCE);
     }
     
@@ -65,5 +69,10 @@ public class Chassis extends SubsystemBase{
         m_rightChassisMotorGroup.set(0);
         m_leftChassisMotorGroup.set(0);
     }
+
+    public double getChassisAngle() {
+        return MathUtils.trueModulu(m_ChassisNavXGyro.getAngle(), 360);
+    }
+
     
 }

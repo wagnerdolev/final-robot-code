@@ -4,10 +4,16 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import frc.robot.Utils.Consts;
 
 public class RobotContainer {
+
+  public static Joystick left = new Joystick(Consts.ChassisConsts.LEFT_JOYSTICK_ID);
+  public static Joystick right = new Joystick(Consts.ChassisConsts.RIGHT_JOYSTICK_ID);
+
   public RobotContainer() {
     configureBindings();
   }
