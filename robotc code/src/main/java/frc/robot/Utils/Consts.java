@@ -18,6 +18,9 @@ public class Consts {
         public static final double FIRST_ARM_GEAR_RATIO = 1/178.3928569921875; // 14 / 50 / 3;
         public static final double SECOND_ARM_GEAR_RATIO = 1/97.2; // 14 / 50 / 3;
 
+        public static final double FIRST_ARM_TURN_THRESH_HOLD = 0;
+        public static final double SECOND_ARM_TURN_THRESH_HOLD = 0;
+
 
     }
 }

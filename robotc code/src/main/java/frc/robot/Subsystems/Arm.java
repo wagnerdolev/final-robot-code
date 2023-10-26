@@ -7,7 +7,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import frc.robot.Utils.Consts;
 public class Arm {
-    private CANSparkMax m_firstArmMotor, m_secondArmMotor;
+    public CANSparkMax m_firstArmMotor, m_secondArmMotor;
     private static Arm m_Arm;
 
     public Arm(){
