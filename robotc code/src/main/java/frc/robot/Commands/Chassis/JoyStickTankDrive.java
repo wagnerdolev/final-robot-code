@@ -28,7 +28,7 @@ public class JoyStickTankDrive extends CommandBase {
       return;
     }
 
-    Chassis.getInstance().drive(0, 0);(m_leftMotorSpeed.get() * Consts.ChassisConsts.SPEED, m_rightMotorSpeed.get() * Consts.ChassisConsts.SPEED);
+    Chassis.getInstance().drive(m_leftMotorSpeed.get() * Consts.ChassisConsts.SPEED, m_rightMotorSpeed.get() * Consts.ChassisConsts.SPEED);
 
   }
 

@@ -9,6 +9,9 @@ import frc.robot.Utils.Consts;
 import frc.robot.Utils.MathUtils;
 
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
+import javax.management.ConstructorParameters;
+
 import com.kauailabs.navx.frc.AHRS;
 
 public class Chassis extends SubsystemBase{
@@ -54,11 +57,11 @@ public class Chassis extends SubsystemBase{
 
     }
     public static double getRightChassisMeters(){
-        return (m_rightForwardChassisMotor.getEncoder().getPosition() * Consts.ChassisConsts.POSITION_TO_DISTANCE);
+        return (m_rightForwardChassisMotor.getEncoder().getPosition() * Consts.ChassisConsts.CHASSI_GEAR_RATIO);
     }
 
     public static double getLeftChassisMeters(){
-        return (m_leftForwardChassisMotor.getEncoder().getPosition() * Consts.ChassisConsts.POSITION_TO_DISTANCE);
+        return (m_leftForwardChassisMotor.getEncoder().getPosition() * Consts.ChassisConsts.CHASSI_GEAR_RATIO);
     }
     
     public static AHRS getGyro(){
@@ -72,6 +75,20 @@ public class Chassis extends SubsystemBase{
 
     public double getChassisAngle() {
         return MathUtils.trueModulu(m_ChassisNavXGyro.getAngle(), 360);
+    }
+
+    /** 
+         *@ The speed is in untis of meters per minute
+    */
+    public double getRightChassisSpeed(){
+        return m_rightForwardChassisMotor.getEncoder().getVelocity() * Consts.ChassisConsts.CHASSI_GEAR_RATIO;
+    }
+
+    /** 
+         *@ The speed is in untis of meters per minute
+    */
+    public double getLeftChassisSpeed(){
+        return m_leftForwardChassisMotor.getEncoder().getVelocity() * Consts.ChassisConsts.CHASSI_GEAR_RATIO;
     }
 
     
