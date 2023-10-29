@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Subsystems.Chassis;
 import frc.robot.Utils.Consts;
 
-public class driveUntilTilted extends CommandBase{
+public class DriveUntilTilted extends CommandBase{
     @Override
     public void initialize() {
         addRequirements(Chassis.getInstance());

@@ -4,14 +4,14 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Subsystems.Chassis;
 import frc.robot.Utils.Consts;
 
-public class driveMeters extends CommandBase { // CR_NOTE: driveMeter is not a meaningful name
+public class DriveMeters extends CommandBase { // CR_NOTE: driveMeter is not a meaningful name
     private double m_targetRightMeters;
     private double m_targetLeftMeters;
 
     private double m_lastTraveldRightMeters = Chassis.getInstance().getRightChassisMeters();
     private double m_lastTraveldLeftMeters = Chassis.getInstance().getLeftChassisMeters();
 
-    public driveMeters(double targetMeters) {
+    public DriveMeters(double targetMeters) {
         m_targetRightMeters = targetMeters + Chassis.getInstance().getRightChassisMeters();
         m_targetLeftMeters = targetMeters + Chassis.getInstance().getLeftChassisMeters();
 

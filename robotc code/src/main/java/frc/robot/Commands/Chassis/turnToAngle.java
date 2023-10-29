@@ -5,11 +5,11 @@ import frc.robot.Subsystems.Chassis;
 import frc.robot.Utils.Consts;
 import frc.robot.Utils.MathUtils;
 
-public class turnToAngle extends CommandBase { // CR_NOTE: where documentation????
+public class TurnToAngle extends CommandBase { // CR_NOTE: where documentation????
     private double m_targetAngle;
     private double m_lastAngle = Chassis.getInstance().getChassisAngle();
 
-    public turnToAngle(double targetAngle) {
+    public TurnToAngle(double targetAngle) {
         this.m_targetAngle = targetAngle;
     }
 

@@ -9,6 +9,7 @@ public class Consts {
         public static final int LEFT_MID_CHASSIS_MOTOR_ID = 0;
         public static final int LEFT_BACK_CHASSIS_MOTOR_ID = 0;
 
+        public static final double CHASSIS_WHEAL_CIRCOMFRENCE = 0;
         public static final double CHASSI_GEAR_RATIO = 0;
 
         public static final double SPEED = 0.4;

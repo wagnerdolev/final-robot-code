@@ -3,25 +3,24 @@ package frc.robot.Commands.Chassis;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Subsystems.Chassis;
 import frc.robot.Utils.Consts;
-public class driveBySpeed extends CommandBase{
+public class DriveBySpeed extends CommandBase{
     double m_targetSpeed;
 
     private double m_lastRightSpeed = 0;
     private double m_lastLeftSpeed = 0;
 
-    public driveBySpeed(double targetSpeed){
+    public DriveBySpeed(double targetSpeed){
         this.m_targetSpeed = targetSpeed;
     }
 
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
-        super.initialize();
+        
     }
     
     @Override
     public void execute() {
-       double currentRightSpeed = Chassis.getInstance().getLeftChassisSpeed();
+       double currentRightSpeed = Chassis.getInstance().getRightChassisSpeed();
        double currentLeftSpeed = Chassis.getInstance().getLeftChassisSpeed();
 
        double rP = m_targetSpeed - currentRightSpeed;

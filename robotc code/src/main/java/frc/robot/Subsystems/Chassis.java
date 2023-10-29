@@ -81,14 +81,14 @@ public class Chassis extends SubsystemBase{
          *@ The speed is in untis of meters per minute
     */
     public double getRightChassisSpeed(){
-        return m_rightForwardChassisMotor.getEncoder().getVelocity() * Consts.ChassisConsts.CHASSI_GEAR_RATIO;
+        return m_rightForwardChassisMotor.getEncoder().getVelocity() * Consts.ChassisConsts.CHASSI_GEAR_RATIO * Consts.ChassisConsts.CHASSIS_WHEAL_CIRCOMFRENCE;
     }
 
     /** 
          *@ The speed is in untis of meters per minute
     */
     public double getLeftChassisSpeed(){
-        return m_leftForwardChassisMotor.getEncoder().getVelocity() * Consts.ChassisConsts.CHASSI_GEAR_RATIO;
+        return m_leftForwardChassisMotor.getEncoder().getVelocity() * Consts.ChassisConsts.CHASSI_GEAR_RATIO * Consts.ChassisConsts.CHASSIS_WHEAL_CIRCOMFRENCE;
     }
 
     
